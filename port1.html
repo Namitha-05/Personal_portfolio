@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Blogging Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+        }
+
+        .header {
+            background-color: #292b2c;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header nav ul {
+            list-style: none;
+        }
+
+        .header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            background-image: url('https://source.unsplash.com/1600x600/?blogging,nature');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            margin-bottom: 1rem;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .btn {
+            padding: 0.75rem 2rem;
+            background-color: #fff;
+            color: #292b2c;
+            text-decoration: none;
+            font-size: 1.25rem;
+            border-radius: 5px;
+        }
+
+        .about, .latest-posts, .contact {
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .about p, .contact p {
+            width: 60%;
+            margin: 1rem auto;
+        }
+
+        .latest-posts {
+            background-color: #fff;
+            padding: 3rem 0;
+        }
+
+        .latest-posts h2 {
+            margin-bottom: 2rem;
+        }
+
+        .posts {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .post-item {
+            width: 30%;
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .post-item img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .post-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+        }
+
+        .post-item p {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-item a {
+            color: #ff7e5f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact form input, .contact form textarea {
+            width: 60%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact form button {
+            padding: 1rem 2rem;
+            background-color: #ff7e5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #292b2c;
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        #success-message {
+            color: green;
+            margin-top: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>BlogHaven</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#latest-posts">Latest Posts</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h2>Welcome to Our Blog</h2>
+            <p>Inspire, Write, and Share Your Thoughts with the World</p>
+            <a href="#latest-posts" class="btn">Explore Posts</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Our Platform</h2>
+            <p>Our blogging platform is a hub for thought-provoking content, creative writing, and a diverse range of topics. Whether you're here to read, write, or share, our platform provides the perfect space for your ideas to flourish.</p>
+        </div>
+    </section>
+
+    <!-- Latest Posts Section -->
+    <section id="latest-posts" class="latest-posts">
+        <div class="container">
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Latest Posts with Read More</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .latest-posts {
+      padding: 40px 0;
+      background-color: #fff;
+    }
+
+    .latest-posts h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .posts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .post-item {
+      background: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .post-item img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .post-item h3 {
+      font-size: 20px;
+      margin: 15px 0;
+    }
+
+    .post-item p {
+      font-size: 15px;
+      color: #333;
+    }
+
+    .read-more-content {
+      display: none;
+    }
+
+    .read-more-link {
+      color: #007BFF;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .read-more-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+
+<!-- Latest Posts Section -->
+<section id="latest-posts" class="latest-posts">
+  <div class="container">
+    <h2>Latest Posts</h2>
+    <div class="posts">
+
+      <div class="post-item">
+        <img src="./images/down1.jpg" alt="Post One">
+        <h3>How to Start a Successful Blog in 2024</h3>
+        <p>
+          Blogging in 2024 is more exciting than ever...
+          <span class="read-more-content">With new trends and tools constantly emerging, we break down the step-by-step process—from choosing the right platform to publishing your first post.</span>
+        </p>
+        <span class="read-more-link" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <div class="post-item">
+        <img src="./images/down2.jpg" alt="Post Two">
+        <h3>Top 10 Social Media Strategies to Promote Your Blog</h3>
+        <p>
+          Social media is a powerful tool for driving traffic...
+          <span class="read-more-content">In this article, we explore top strategies to grow your audience, engage with followers, and increase visibility.</span>
+        </p>
+        <span class="read-more-link" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+      <div class="post-item">
+        <img src="./images/down3.jpg" alt="Post Three">
+        <h3>How to Build a Content Calendar for Consistent Posting</h3>
+        <p>
+          Consistency is key to blog growth...
+          <span class="read-more-content">A well-organized calendar keeps you on track. Learn how to plan posts, maintain engagement, and avoid burnout.</span>
+        </p>
+        <span class="read-more-link" onclick="toggleReadMore(this)">Read More</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>Have questions or feedback? We'd love to hear from you!</p>
+    <form id="contact-form">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Submit</button>
+      <p id="success-message"></p>
+    </form>
+  </div>
+</section>
+
+
+<script>
+  function toggleReadMore(link) {
+    const content = link.previousElementSibling.querySelector('.read-more-content');
+    if (content.style.display === 'inline') {
+      content.style.display = 'none';
+      link.textContent = 'Read More';
+    } else {
+      content.style.display = 'inline';
+      link.textContent = 'Read Less';
+    }
+  }
+</script>
+
+
+   
+    
+
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting
+
+        // Get input values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Get error message elements
+        const nameError = document.getElementById('name-error');
+        const emailError = document.getElementById('email-error');
+        const messageError = document.getElementById('message-error');
+        const successMessage = document.getElementById('success-message');
+
+        // Reset errors
+        nameError.style.display = 'none';
+        emailError.style.display = 'none';
+        messageError.style.display = 'none';
+        successMessage.textContent = '';
+
+        let isValid = true;
+
+        // Name validation
+        if (name === '') {
+            nameError.style.display = 'block';
+            isValid = false;
+        }
+
+        // Email validation (basic pattern)
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email === '' || !emailPattern.test(email)) {
+            emailError.style.display = 'block';
+            isValid = false;
+        }
+
+        // Message validation
+        if (message === '') {
+            messageError.style.display = 'block';
+            isValid = false;
+        }
+
+        // If valid, show success message and reset form
+        if (isValid) {
+            successMessage.textContent = 'Your message has been sent successfully!';
+            document.getElementById('contact-form').reset();
+
+            // Optionally fade out success message after 5 seconds
+            setTimeout(() => {
+                successMessage.textContent = '';
+            }, 5000);
+        }
+    });
+</script>
+<!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Your Blogging Platform. All rights reserved.</p>
+        </div>
+    </footer>
